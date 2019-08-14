@@ -2,27 +2,33 @@
   "name": "react-loading",
   "version": "0.1.0",
   "private": true,
+  "main": "./",
   "devDependencies": {
     "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-stage-0": "^7.0.0",
     "@storybook/addon-actions": "^5.1.11",
     "@storybook/addon-links": "^5.1.11",
     "@storybook/react": "^5.1.11",
     "babel-loader": "^8.0.6",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "path": "^0.12.7",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-scripts": "3.1.1",
-    "styled-components": "^4.3.2"
+    "styled-components": "^4.3.2",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.6"
   },
   "peerDependencies": {
     "react": "^16.x",
     "react-dom": "^16.x"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "storybook": "start-storybook"
+    "storybook": "start-storybook",
+    "build": "webpack"
   },
   "eslintConfig": {
     "extends": "react-app"
