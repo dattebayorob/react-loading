@@ -13,7 +13,8 @@ module.exports = {
         rules: [
             {
                 test: /\.(jsx|js)?$/,
-                exclude: /(node_modules)/,
+                include: path.resolve(__dirname, 'src'),
+                exclude: /(node_modules|stories|build)/,
                 use: 'babel-loader'
             },{
                 test: /\.(jpe?g|png|gif|mp3)$/i,
