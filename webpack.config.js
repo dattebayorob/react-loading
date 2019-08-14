@@ -1,35 +1,32 @@
 var path = require('path')
-const TerserPlugin = require('terser-webpack-plugin')
+const nodeExternals = require('webpack-node-externals')
 
 module.exports = {
-    mode: 'production',
     entry: './src/index.js',
+    mode: 'development',
     output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: '[name].js',
-        libraryTarget: 'commonjs2'
+      path: path.resolve(__dirname, './build'),
+      filename: 'index.js',
+      libraryTarget: 'commonjs'
     },
+    externals: [nodeExternals()],
     module: {
-        rules: [
-            {
-                test: /\.(jsx|js)?$/,
-                include: path.resolve(__dirname, 'src'),
-                exclude: /(node_modules|stories|build)/,
-                use: 'babel-loader'
-            },{
-                test: /\.(jpe?g|png|gif|mp3)$/i,
-                // include: SRC,
-                loaders: ['file-loader']
-            }
-        ]
-    },
-    resolve: {
-      extensions: [ '.jsx', '.js' ]
+      rules: [
+        {
+          test: /\.js$/,
+          exclude: /(node_modules|bower_components)/,
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/react']
+          }
+        },
+        {
+            test: /\.(jpeg|png|gif|mp3)$/i,
+            loaders: ['file-loader']
+        }
+      ]
     },
     externals: {
       'react': 'commonjs react'
-    },
-    optimization: {
-      minimizer: [new TerserPlugin()]
     }
-}
+  }
