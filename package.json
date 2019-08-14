@@ -1,13 +1,14 @@
 {
   "name": "react-loading-dtb",
-  "version": "0.2.6",
-  "main": "dist/loading.js",
+  "version": "0.2.7",
+  "main": "build/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/dattebayorob/react-loading.git"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-stage-0": "^7.0.0",
