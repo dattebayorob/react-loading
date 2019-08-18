@@ -1,13 +1,15 @@
 {
   "name": "react-loading-dtb",
   "version": "0.3.2",
-  "main": "./build/index.js",
+  "main": "./index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/dattebayorob/react-loading.git"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-export-default-from": "^7.5.2",
+    "@babel/plugin-proposal-export-namespace-from": "^7.5.2",
     "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
@@ -32,7 +34,7 @@
   },
   "scripts": {
     "storybook": "start-storybook",
-    "build": "webpack --mode=production"
+    "build": "webpack --watch --mode=production"
   },
   "eslintConfig": {
     "extends": "react-app"
